@@ -7,7 +7,7 @@
  
   Check out the links above for our tutorials and wiring diagrams
   These displays use SPI to communicate, 4 or 5 pins are required to
-  interface (RST is optional)
+  interface (rst is optional)
   Adafruit invests time and resources providing this open source code,
   please support Adafruit and open-source hardware by purchasing
   products from Adafruit!
@@ -375,7 +375,7 @@ void Adafruit_ST7735::commonInit(const uint8_t *cmdList) {
     *dataport  &= ~datapinmask;
   }
 
-  // toggle RST low to reset; CS low so it'll listen to us
+  // toggle rst low to reset; cs low so it'll listen to us
   *csport &= ~cspinmask;
   if (_rst) {
     pinMode(_rst, OUTPUT);
