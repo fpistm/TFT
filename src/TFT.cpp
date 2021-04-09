@@ -35,6 +35,15 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 TFT EsploraTFT(7, 0, 1);
 #endif
 
+TFT::TFT(uint8_t cs, uint8_t rs, uint8_t sid, uint8_t sclk, uint8_t rst) 
+  : Adafruit_ST7735(cs, rs, sid, sclk, rst)
+{
+  // as we already know the orientation (landscape, therefore rotated),
+  // set default width and height without need to call begin() first.
+  _width = ST7735_TFTHEIGHT;
+  _height = ST7735_TFTWIDTH;
+}
+
 TFT::TFT(uint8_t cs, uint8_t rs, uint8_t rst)
   : Adafruit_ST7735(cs, rs, rst)
 {

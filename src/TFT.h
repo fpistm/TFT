@@ -44,6 +44,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /// @author Enrico Gueli <enrico.gueli@gmail.com>
 class TFT : public Adafruit_ST7735 {
 public:
+  TFT(uint8_t cs, uint8_t rs, uint8_t sid, uint8_t sclk, uint8_t rst);
   TFT(uint8_t cs, uint8_t rs, uint8_t rst);
 
   void begin();  
